@@ -22,7 +22,7 @@ if(process.env.NODE_ENV !== "production"){
     mongoose.set("debug", true);
 }
 
-// //mongodb connection 
+//mongodb connection 
 mongoose.connect(DATABASE_URL,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
