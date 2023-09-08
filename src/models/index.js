@@ -1,4 +1,3 @@
-import UserModel from "./userModel";
+import UserModel from "./userModel.js";
 
-
-export {UserModel};
+export  {UserModel};
