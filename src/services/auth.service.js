@@ -7,7 +7,7 @@ import {UserModel} from "../models/index.js"
 const {DEFAULT_PICTURE, DEFAULT_STATUS} = process.env;
 
 
-export const createUser=async(userData) =>{
+export const createUser = async(userData) =>{
     const {name, email, picture, status, password} = userData;
 
     //check if fields are empty
@@ -48,7 +48,7 @@ export const createUser=async(userData) =>{
         throw createHttpError.BadRequest("Please make sure your password s between 6 and 128 characters.");
 
     }
-
+``
     //hash password ----> to be done in the user model
 
 
@@ -78,6 +78,4 @@ export const signUser = async(email, password) => {
     if(!passwordMatches) throw createHttpError.NotFound("Invalid credentials.");
 
     return user;
-
-
 };

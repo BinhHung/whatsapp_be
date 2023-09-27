@@ -10,7 +10,7 @@ dotenv.config();
 //env variables
 const  DATABASE_URL  = process.env.DATABASE_URL;
 const PORT = process.env.PORT ;
-// console.log("DATABASE_URL:", DATABASE_URL);
+
 //exit on mongodb error
 mongoose.connection.on('error',(err)=>{
     logger.error(`Mongodb connection error: ${err} `);

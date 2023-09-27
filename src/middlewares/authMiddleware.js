@@ -1,5 +1,7 @@
 import createHttpError from "http-errors";
 import jwt from "jsonwebtoken";
+
+
 export default async function (req, res, next){
     if(!req.headers["authorization"])
     {
@@ -16,5 +18,4 @@ export default async function (req, res, next){
         req.user = payload;
         next();
     });
-
 }

@@ -56,7 +56,6 @@ export const login = async (req,res,next) => {
         });
 
         
-       
         res.json({
             message: "register success.",
             user: {
@@ -99,8 +98,9 @@ export const refreshtoken = async (req,res,next) => {
             "1d",
             process.env.ACCESS_TOKEN_SECRET
         );
-
+        
         res.json({
+            message: "Complete refresh!",
             user: {
                 _id: user._id,
                 name: user.name,
@@ -108,7 +108,6 @@ export const refreshtoken = async (req,res,next) => {
                 picture: user.picture,
                 status: user.status,
                 access_token,
-
             },
         });
 
