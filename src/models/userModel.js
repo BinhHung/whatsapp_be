@@ -11,7 +11,7 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, "please provide your email address"],
         unqiue: [true, "This email address already exist"],
-        lowercae: true,
+        lowercase: true,
         validate:[validator.isEmail, "Please provide a valid email address"],
     },
     picture:{
@@ -31,7 +31,7 @@ const userSchema = mongoose.Schema({
 
 },
 {
-   collection: "user",
+   collection: "users",
    timestamps: true, 
 
 });
@@ -49,5 +49,9 @@ userSchema.pre("save", async function(next){
     }
 });
 
-const UserModel = mongoose.models.UserModel || mongoose.model("Usermodel", userSchema);
+const UserModel = mongoose.models.UserModel || mongoose.model("UserModel", userSchema);
 export default UserModel;
+
+
+
+
