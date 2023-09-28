@@ -1,7 +1,7 @@
 import express from "express";
 import trimRequest from "trim-request";
 import authMiddleware from "../middlewares/authMiddleware.js";
-import{create_open_Conversation, getConversations} from "../controller/conversation.controller.js";
+import{create_open_Conversation, getConversations} from "../controllers/conversation.controller.js";
 
 
 const router = express.Router();

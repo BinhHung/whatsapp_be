@@ -1,5 +1,5 @@
 import express from "express";
-import { login, logout, refreshtoken, register } from "../controller/auth.controller.js";
+import { login, logout, refreshtoken, register } from "../controllers/auth.controller.js";
 import trimRequest from "trim-request";
 import authMiddleware from "../middlewares/authMiddleware.js";
 const router = express.Router();
