@@ -2,11 +2,10 @@ import mongoose from "mongoose";
 
 
 
-const {ObjecId} = mongoose.Schema.Types;
-
+const {ObjectId} = mongoose.Schema.Types;
 const messageSchema = mongoose.Schema({
     sender: {
-        type: ObjecId,
+        type: ObjectId,
         ref: "UserModel",
     },
     message: {
@@ -14,7 +13,7 @@ const messageSchema = mongoose.Schema({
         trim: true,
     },
     conversation: {
-        type: ObjecId,
+        type: ObjectId,
         ref: "ConversationModel",
     },
     files: [],
