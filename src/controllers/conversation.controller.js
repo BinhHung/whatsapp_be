@@ -10,7 +10,7 @@ export const create_open_Conversation = async(req,res,next)=>{
         //check if receiver_id is provided
         if(!receiver_id){
             logger.error("please provide the user id you wana start a conversation with!");
-            throw createHttpError.BadGateway("Opps... Something went wrong!");
+            throw createHttpError.BadRequest("Opps... Something went wrong!");
         }
 
         //check if chat exists
@@ -24,6 +24,7 @@ export const create_open_Conversation = async(req,res,next)=>{
             let receiver_user = await findUser(receiver_id);
             let convoData={
                 name: receiver_user.name,
+                picture: receiver_user.picture,
                 isGroup: false,
                 users: [sender_id, receiver_id],
             };
@@ -33,7 +34,7 @@ export const create_open_Conversation = async(req,res,next)=>{
                 "users",
                 "-password"
             );
-            res.json(populatedConvo);
+            res.json(populatedConvo);   
         }
 
     }catch(error){
