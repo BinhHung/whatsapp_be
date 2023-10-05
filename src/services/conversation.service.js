@@ -19,7 +19,7 @@ export const doesConversationExist = async(sender_id, receiver_id)=>{
         path: "latestMessage.sender",
         select: "name email picture status",
       });
-  
+
       return convos[0];
 }; 
 
